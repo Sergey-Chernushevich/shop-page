@@ -1,0 +1,36 @@
+<header id="header" class="header">
+  <a href="#" class="logo header__logo">
+    <p class="logo__title">Best shop</p>
+  </a>
+  <nav class="navigation header__navigation">
+    <ul class="navigation__list">
+      <li class="navigation__list-item">
+        <a href="#" class="navigation__link">Домой</a>
+      </li>
+      <li class="navigation__list-item">
+        <a href="#" class="navigation__link">О нас</a>
+      </li>
+      <li class="navigation__list-item">
+        <a href="#footer-contacts" class="navigation__link">Контакты</a>
+      </li>
+    </ul>
+  </nav>
+  <a href="#" class="basket header__basket">
+    <svg
+      class="basket__image"
+      width="21"
+      height="21"
+      viewBox="0 0 21 21"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.42432 16.2875C5.32432 16.2875 4.42432 17.1875 4.42432 18.2875C4.42432 19.3875 5.32432 20.2875 6.42432 20.2875C7.52432 20.2875 8.42432 19.3875 8.42432 18.2875C8.42432 17.1875 7.52432 16.2875 6.42432 16.2875ZM0.424316 0.287476V2.28748H2.42432L6.02432 9.88748L4.62432 12.2875C4.52432 12.5875 4.42432 12.9875 4.42432 13.2875C4.42432 14.3875 5.32432 15.2875 6.42432 15.2875H18.4243V13.2875H6.82432C6.72432 13.2875 6.62432 13.1875 6.62432 13.0875V12.9874L7.52432 11.2874H14.9243C15.7243 11.2874 16.3243 10.8874 16.6243 10.2874L20.2243 3.78748C20.4243 3.58748 20.4243 3.48748 20.4243 3.28748C20.4243 2.68748 20.0243 2.28748 19.4243 2.28748H4.62432L3.72432 0.287476H0.424316ZM16.4243 16.2875C15.3243 16.2875 14.4243 17.1875 14.4243 18.2875C14.4243 19.3875 15.3243 20.2875 16.4243 20.2875C17.5243 20.2875 18.4243 19.3875 18.4243 18.2875C18.4243 17.1875 17.5243 16.2875 16.4243 16.2875Z"
+        fill="white"
+      />
+    </svg>
+    <p class="basket__amount" id="basket-amount">0</p>
+  </a>
+  @@include('./burger-button.html',{"id":"burger-button",
+  "class":"header__burger-button"})
+</header>

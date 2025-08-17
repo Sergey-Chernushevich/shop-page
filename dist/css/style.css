@@ -1,0 +1,626 @@
+/* 1. Use a more-intuitive box-sizing model */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+/* 7. Avoid text overflows */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+.burger-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  bottom: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.burger-menu.burger-menu_active {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.1s;
+}
+
+.burger-menu__body {
+  width: 320px;
+  height: 100%;
+  background-color: #05386b;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  transform: translateX(-100%);
+  transition: 0.1s;
+}
+
+.burger-menu__body.burger-menu__body_active {
+  transform: translateX(0);
+  transition: 0.1s;
+}
+
+.burger-menu__navigation {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.burger-menu__navigation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.burger-menu__navigation-link {
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.burger-menu__navigation-link {
+  display: block;
+}
+
+.burger-button {
+  width: 25px;
+  height: 20px;
+  position: relative;
+  z-index: 99999;
+  opacity: 1;
+  background: transparent;
+  border: none;
+  transition: 0.1s;
+}
+
+.burger-button.hide {
+  opacity: 0;
+}
+
+.burger-button.show {
+  opacity: 1;
+  transition: 0.1s;
+}
+
+.burger-button .burger-line {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  position: absolute;
+}
+
+.burger-button__line-one {
+  left: 0;
+  top: 0;
+  transform: translate(0, 0) rotate(0);
+  transition: 0.1s;
+}
+
+.burger-button__line-two {
+  transform: translateY(-50%);
+  left: 0;
+  top: 50%;
+  transition: 0.1s;
+}
+
+.burger-button__line-three {
+  left: 0;
+  top: 100%;
+  transform: translate(0, -100%) rotate(0);
+  transition: 0.1s;
+}
+
+.burger-button.burger-button_active .burger-button__line-one {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: 0.1s;
+}
+
+.burger-button.burger-button_active .burger-button__line-two {
+  opacity: 0;
+  transition: 0.1s;
+}
+
+.burger-button.burger-button_active .burger-button__line-three {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transition: 0.1s;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal_show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal_show .modal__content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal__content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 85%;
+  max-height: 85%;
+  overflow-y: auto;
+  transform: scale(0.8);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.modal__close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.flexSpaceBetweenCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding-top: 70px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  max-width: 1400px;
+  margin: 0 auto;
+  z-index: 1000;
+  color: #ffffff;
+  height: 70px;
+  background-color: #05386b;
+  padding-left: 5%;
+  padding-right: 5%;
+  transition: 0.1s;
+}
+
+.header__burger-button {
+  display: none;
+}
+
+.header .header-hide {
+  transform: translateY(-100%);
+  transition: 0.1s;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.1s;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+  transition: 0.1s;
+}
+
+.navigation__list {
+  display: flex;
+  gap: 50px;
+  font-size: 18px;
+}
+
+.navigation__list-item {
+  transition: 0.1s;
+  border-bottom: 1px solid transparent;
+}
+
+.navigation__list-item:hover {
+  transition: 0.1s;
+  border-bottom: 1px solid #ffffff;
+}
+
+.basket {
+  position: relative;
+}
+
+.basket__amount {
+  position: absolute;
+  z-index: 2;
+  background-color: #000000;
+  border-radius: 100px;
+  min-width: 20px;
+  height: 20px;
+  font-size: 11px;
+  text-align: center;
+  line-height: 20px;
+  top: -10px;
+  right: -15px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.section {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.section__title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.product {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.product__image-block {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 500px;
+  flex-shrink: 0;
+}
+
+.product__image-block > * {
+  height: 100%;
+  width: auto;
+}
+
+.product__title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.product__price {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.product__description {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: none;
+  border: none;
+  height: 35px;
+  color: #ffffff;
+  background-color: #05386b;
+  padding-right: 15px;
+  padding-left: 15px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.button:hover {
+  transform: scale(1.01);
+  transition: 0.1s;
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+.star-rating {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.star-rating__input[type="radio"] {
+  display: none;
+}
+
+.star-rating__star {
+  font-size: 30px;
+  cursor: pointer;
+  color: #cccccc;
+  display: inline-block;
+  position: relative;
+  transition: 0.1s;
+}
+
+.star-rating__star:before {
+  content: "★";
+  font-family: "Arial", sans-serif;
+  font-size: 30px;
+  display: block;
+}
+
+.star-rating__input[type="radio"]:checked ~ .star-rating__star,
+.star-rating__input[type="radio"]:checked ~ .star-rating__star ~ .star-rating__star {
+  color: #f5b301;
+}
+
+.star-rating__star:hover,
+.star-rating__star:hover ~ .star-rating__star {
+  transform: scale(1.2);
+  color: #f5b301;
+  transition: 0.1s;
+}
+
+.similar__list {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.similar__list-item {
+  display: flex;
+}
+
+.similar__title {
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.card__image-block {
+  height: 180px;
+  margin: 0 auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.card__image-block > * {
+  height: 100%;
+  width: auto;
+}
+
+.card__title {
+  font-size: 16px;
+  flex-grow: 1;
+  text-wrap: balance;
+  text-align: center;
+}
+
+.card__stars {
+  margin: 0 auto;
+}
+
+.card__star {
+  font-size: 24px;
+  color: #ccc;
+}
+
+.card__star.card__star_light {
+  color: #f5b301;
+}
+
+.card__price {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #05386b;
+}
+
+.footer__navigation {
+  color: #ffffff;
+}
+
+.footer__contacts {
+  color: #ffffff;
+  display: flex;
+  gap: 15px;
+}
+
+@media only screen and (min-width: 2700px) {
+  html {
+    zoom: 200%;
+  }
+}
+
+@media only screen and (min-width: 8000px) {
+  html {
+    zoom: 400%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .product__image-block {
+    height: 300px;
+  }
+
+  .product__title {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__burger-button {
+    display: flex;
+  }
+
+  .header__navigation {
+    display: none;
+  }
+
+  .product {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product__title {
+    text-align: center;
+  }
+
+  .product__price {
+    text-align: center;
+  }
+
+  .product__info-button {
+    margin-top: 10px;
+  }
+
+  .footer {
+    flex-direction: column;
+    height: auto;
+    gap: 5px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal__content {
+    width: 95%;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .product__image-block {
+    height: auto;
+    width: 100%;
+  }
+
+  .footer__navigation .navigation__list {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .burger-menu__body {
+    width: 250px;
+  }
+}

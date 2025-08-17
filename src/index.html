@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html',{title:'Смартфон Apple iPhone 15 128GB'})
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html',{}) @@include('html/burger-menu.html',{})
+      <main class="main">
+        <section class="section product">
+          <div class="product__image-block">
+            <img height="100%" src="@img/iphone_15.jpg" alt="iphone15" />
+          </div>
+
+          <div class="product__info">
+            <h3 class="product__title">Смартфон Apple iPhone 15 128GB</h3>
+            <div class="star-rating product__star-rating">
+              <input
+                class="star-rating__input"
+                type="radio"
+                id="star5"
+                name="rating"
+                value="5"
+              />
+              <label
+                class="star-rating__star"
+                for="star5"
+                title="Отлично"
+              ></label>
+
+              <input
+                class="star-rating__input"
+                type="radio"
+                id="star4"
+                name="rating"
+                value="4"
+              />
+              <label
+                class="star-rating__star"
+                for="star4"
+                title="Хорошо"
+              ></label>
+
+              <input
+                class="star-rating__input"
+                type="radio"
+                id="star3"
+                name="rating"
+                value="3"
+              />
+              <label
+                class="star-rating__star"
+                for="star3"
+                title="Нормально"
+              ></label>
+
+              <input
+                class="star-rating__input"
+                type="radio"
+                id="star2"
+                name="rating"
+                value="2"
+              />
+              <label
+                class="star-rating__star"
+                for="star2"
+                title="Плохо"
+              ></label>
+
+              <input
+                class="star-rating__input"
+                type="radio"
+                id="star1"
+                name="rating"
+                value="1"
+              />
+              <label
+                class="star-rating__star"
+                for="star1"
+                title="Очень плохо"
+              ></label>
+            </div>
+            <p class="product__price">2 549,00 руб.</p>
+            <p class="product__description">
+              IOS, экран 6.1 ", OLED, 1179x2556, Apple A16 Bionic, оперативная
+              память 6 Гб, встроенная память 128 Гб, камера 48 Мп, аккумулятор
+              3349 мАч, 1 SIM, Nano-SIM, eSIM
+            </p>
+            <button id="add-to-basket" class="button product__button">
+              Добавить в корзину
+            </button>
+            <button id="info-button" class="button product__info-button">
+              !
+            </button>
+          </div>
+        </section>
+        <section class="section similar">
+          <h2 class="section__title similar__title">
+            Возможно вам будет интересно
+          </h2>
+          <ul class="similar__list">
+            <li class="similar__list-item">
+              <a class="card" href="#">
+                <div class="card__image-block">
+                  <img height="100%" src="@img/huavei.jpg" alt="Huavei pure" />
+                </div>
+
+                <h3 class="card__title">
+                  Смартфон Huawei Pura 80 Pro LMR-LX9 12GB/512GB (черный)
+                </h3>
+                <div class="card__stars">
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star">&#9733;</span>
+                </div>
+                <p class="card__price">1 950,00 руб.</p>
+              </a>
+            </li>
+            <li class="similar__list-item">
+              <a class="card" href="#">
+                <div class="card__image-block">
+                  <img height="100%" src="@img/moto.jpg" alt="Motorola G5g" />
+                </div>
+
+                <h3 class="card__title">
+                  Смартфон Motorola Moto G 5G (2024) 4GB/128GB (темно-зеленый)
+                </h3>
+                <div class="card__stars">
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                </div>
+                <p class="card__price">1 250,00 руб.</p>
+              </a>
+            </li>
+            <li class="similar__list-item">
+              <a class="card" href="#">
+                <div class="card__image-block">
+                  <img height="100%" src="@img/huavei.jpg" alt="Huavei pure" />
+                </div>
+
+                <h3 class="card__title">
+                  Смартфон Huawei Pura 80 Pro LMR-LX9 12GB/512GB (черный)
+                </h3>
+                <div class="card__stars">
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star">&#9733;</span>
+                </div>
+                <p class="card__price">1 950,00 руб.</p>
+              </a>
+            </li>
+            <li class="similar__list-item">
+              <a class="card" href="#">
+                <div class="card__image-block">
+                  <img height="100%" src="@img/moto.jpg" alt="Motorola G5g" />
+                </div>
+
+                <h3 class="card__title">
+                  Смартфон Motorola Moto G 5G (2024) 4GB/128GB (темно-зеленый)
+                </h3>
+                <div class="card__stars">
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                  <span class="card__star card__star_light">&#9733;</span>
+                </div>
+                <p class="card__price">1 250,00 руб.</p>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      @@include('html/footer.html',{}) @@include('html/modal.html',{})
+    </div>
+
+    <script src="js/app.min.js"></script>
+  </body>
+</html>
